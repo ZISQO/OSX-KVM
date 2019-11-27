@@ -49,9 +49,9 @@ $ virsh define macOS.xml
 * /home/사용자계정/OSX-KVM 폴더에서 위 명령을 실행해 xml 파일을 virt-manager에 등록합니다
 <br/>
 
-```
+
 **식스플로우에서 사전 설치 디스크(24GB)는 home/사용자계정/OSX-KVM 폴더안에 위치하게 해주세요
-```
+
 
 
 ```
