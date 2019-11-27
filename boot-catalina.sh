@@ -8,7 +8,7 @@
 # NOTE: "MY_OPTIONS" 값을 변경하면 부팅 오류를 해결 할 수 있습니다                    #
 ############################################################################
 
-# This works for Catalina as well as Mojave. Tested with macOS 10.14.6 and macOS 10.15.
+# 이 스크립트는 모하비처럼 카탈리나를 설치하는 것이며 10.14.6과 10.15.1에서 테스트 되었습니다
 
 MY_OPTIONS="+pcid,+ssse3,+sse4.2,+popcnt,+avx,+aes,+xsave,+xsaveopt,check"
 
