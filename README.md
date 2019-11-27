@@ -53,6 +53,7 @@ $ virsh define macOS.xml
 * 가상 머신에서 네트워크 설정은 BCM4360을 패스스루 할 것이므로, 별도 설정을 진행하지 않습니다
 * ZISQO의 깃허브에서 배포중인 클로버 부트로더는 2560x1440 해상도를 기준으로 부팅됩니다
 * TianoCore 설정의 OVMF 해상도를 2560x1440으로 표시하려면 HDMI 포트로 연결해야 합니다
+* **클린 설치를 진행할 경우 이 명령은 지금 실행하지 않습니다
 <br/>
 <br/>
 
@@ -63,6 +64,13 @@ ___
 *  마우스 좌표가 디스플레이 되는 영역이 다를 수 있지만 익숙해지면 생각보다 쉽게 사용 가능합니다
 ___
 <br/>
+
+```
+$ sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/xxx
+```
+* 앱스토어에서 다운로드 받은 파일을 USB에 복원해야 합니다
+* 명령어 마지막 문자 xxx는 USB 드라이브 이름을 지정 해주면 됩니다
+* 클린 디스크 복원 과정엔 어떠한 패치도 들어가지 않습니다
 
 
 ```
@@ -75,11 +83,8 @@ $ qemu-img create -f qcow2 mac_hdd_ng.img 128G
 <br/>
 
 ```
-$ sudo ./boot-catalina.sh
+$ virsh define macOS.xml
 ```
-* qemu 인스턴스 윈도우를 이용해 카탈리나를 설치합니다
-* 키보드/마우스는 모두 가상 머신에서 자동으로 할당하니 USB 패스스루 할 필요가 없습니다
-
 
 
 
