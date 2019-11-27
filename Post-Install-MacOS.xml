@@ -2,7 +2,10 @@
 	vCPU 관련 설정 
 	Intel/AMD의 VCPU 설정이 다름을 유의합니다
 	식스플로우 팁게시판을 이용해 vCPU 설정을 마무리 하도록 합니다
+
 	* Q35-acpi-dsdt에선 8개의 vCPU를 지원합니다
+        * vCPU 수량을 늘리려면 original DSDT를 추출해 C007이후 스탯을 추가해야 합니다
+
 -->
   <vcpu placement='static'>8</vcpu>
   <iothreads>1</iothreads>
