@@ -19,13 +19,13 @@ $ cd ~
 $ git clone https://github.com/zisqo/OSX-KVM.git
 ```
 * 홈 폴더에 OSX-KVM 관련 파일을 다운로드 합니다
-
+<br/>
 
 ```
 $ sudo apt-get install qemu uml-utilities virt-manager dmg2img git wget libguestfs-tools
 ```
 * QEMU 및 관련 필수 패키지를 다운로드 합니다
-
+<br/>
 
 ```
 $ sudo -s
@@ -34,14 +34,14 @@ $ echo 1 > /sys/module/kvm/parameters/ignore_msrs
 $ sudo cp kvm.conf /etc/modprobe.d/kvm.conf
 ```
 * MSR lock 관련 패치를 진행합니다
-
+<br/>
 
 ```
 $ sed -i "s/CHANGEME/$USER/g" macOS.xml
 ```
 * macOS.xml의 홈 계정을 현재 접속한 계정으로 변경합니다
 * 절대 root 계정으로 접속해 위 명령을 실행하지 말아주세요
-
+<br/>
 
 ```
 $ qemu-img create -f qcow2 mac_hdd_ng.img 128G
@@ -50,18 +50,18 @@ $ qemu-img create -f qcow2 mac_hdd_ng.img 128G
 * 만약 식스플로우에서 사전 설치본 (24G)을 다운로드 받는다면 이 과정을 패스해 주세요
 * 맥오에스를 설치할 경우 Virt-IO를 이용한 NVMe 설치를 불가하니 img 파일을 NVMe에 복사해 주세요
 * 그렇지 않을경우 SSD 디스크에 복사할 것을 권장합니다
-
+<br/>
 
 ```
 클린 설치를 시도한다면 반드시 앱스토어에서 다운로드 받은 이미지(8GB)를 이용해 설치해 주세요
 저용량 설치 디스크는 swdn.apple.com에서 다운로드 받을 때 Proxy 또는 VPN 서버 연결 불가할 경우 패키지 오류#8을 뿜어냅니다
 APFS 부트 패치를 할 필요가 없으며 클린 설치 시도할 때 HFS로 포맷해도 APFS로 변경됩니다
 ```
-
+<br/>
 ___
 * 가상 머신에서 네트워크 설정은 BCM4360을 패스스루 할 것이므로, 별도 설정을 진행하지 않습니다
 * ZISQO의 깃허브에서 배포중인 클로버 부트로더는 2560x1440 해상도를 기준으로 부팅됩니다
 * TianoCore 설정의 OVMF 해상도를 2560x1440으로 표시하려면 HDMI 포트로 연결해야 합니다
 ___
-
+<br/>
 
