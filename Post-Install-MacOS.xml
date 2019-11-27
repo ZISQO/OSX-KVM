@@ -1,0 +1,51 @@
+<!-- 
+	vCPU 관련 설정 
+	Intel/AMD의 VCPU 설정이 다름을 유의합니다
+	식스플로우 팁게시판을 이용해 vCPU 설정을 마무리 하도록 합니다
+	* Q35-acpi-dsdt에선 8개의 vCPU를 지원합니다
+-->
+  <vcpu placement='static'>8</vcpu>
+  <iothreads>1</iothreads>
+  <cputune>
+    <vcpupin vcpu='2' cpuset='2'/>
+    <vcpupin vcpu='3' cpuset='8'/>
+    <vcpupin vcpu='4' cpuset='3'/>
+    <vcpupin vcpu='5' cpuset='9'/>
+    <vcpupin vcpu='6' cpuset='4'/>
+    <vcpupin vcpu='7' cpuset='10'/>
+    <emulatorpin cpuset='0,6'/>
+    <iothreadpin iothread='1' cpuset='0,6'/>
+  </cputune>
+
+<!--
+	맥오에스는 CPU는 호스트 패스스루를 사용하며 아래와 같은 설정을 유지해 주세요
+	CPU 토폴로지는 XML에서 설정하지 않고 Config.plist의 Kernel 패치를 사용합니다
+-->
+  <cpu mode='host-passthrough' check='none'/>
+
+
+<!--
+	클로버 부트로더(/OSX-KVM/Catalina/CloverNG.qcow2)를 이용한 부팅은 CPU 설정은 반드시 Penryn으로 합니다
+-->
+<!--	Penryn 설정 (클로버 부트로더용) -->
+  <qemu:commandline>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
+    <qemu:arg value='-smbios'/>
+    <qemu:arg value='type=2'/>
+    <qemu:arg value='-cpu'/>
+    <qemu:arg value='Penryn,kvm=on,vendor=GenuineIntel,+invtsc,vmware-cpuid-freq=on,+pcid,+ssse3,+sse4.2,+popcnt,+avx,+aes,+xsave,+xsaveopt,check'/>
+  </qemu:commandline>
+
+
+<!--	오픈코어 부트로더용 스카이레이크 -->
+  <qemu:commandline>
+    <qemu:arg value='-device'/>
+    <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
+    <qemu:arg value='-smbios'/>
+    <qemu:arg value='type=2'/>
+    <qemu:arg value='-cpu'/>
+    <qemu:arg value='Skylake-Server,kvm=on,vendor=GenuineIntel,+hypervisor,-erms,+invtsc,kvm=on,+topoext,+svm,+invtsc,+fma,+mmxext,+avx,+avx2,+aes,+xsave,+xsaveopt,+ssse3,+sse4_2,+popcnt,+sse4a,+bmi1,+bmi2,+arat,+abm,+3dnowprefetch,+adx,+clflushopt,+cr8legacy,+fsgsbase,+fxsr_opt,+misalignsse,+movbe,+osvw,+pclmuldq,+pdpe1gb,+rdrand,+rdseed,+rdtscp,+sha-ni,+smap,+smep,+svm,+vme,+xgetbv1,+xsave,+xsavec,+clwb,+umip,+topoext,+perfctr-core,+amd-ssbd,+wbnoinvd'/>
+  </qemu:commandline>
+</domain>
+
