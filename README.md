@@ -44,6 +44,17 @@ $ sed -i "s/CHANGEME/$USER/g" macOS.xml
 <br/>
 
 ```
+$ virsh define macOS.xml
+```
+* /home/사용자계정/OSX-KVM 폴더에서 위 명령을 실행해 xml 파일을 virt-manager에 등록합니다
+<br/>
+
+```
+**식스플로우에서 사전 설치 디스크(24GB)는 home/사용자계정/OSX-KVM 폴더안에 위치하게 해주세요
+```
+
+
+```
 $ qemu-img create -f qcow2 mac_hdd_ng.img 128G
 ```
 * 가상 머신이 설치될 디스크를 생성합니다
@@ -52,10 +63,13 @@ $ qemu-img create -f qcow2 mac_hdd_ng.img 128G
 * 그렇지 않을경우 SSD 디스크에 복사할 것을 권장합니다
 <br/>
 
+
+
 ```
 클린 설치를 시도한다면 반드시 앱스토어에서 다운로드 받은 이미지(8GB)를 이용해 설치해 주세요
 저용량 설치 디스크는 swdn.apple.com에서 다운로드 받을 때 Proxy 또는 VPN 서버 연결 불가할 경우 패키지 오류#8을 뿜어냅니다
 APFS 부트 패치를 할 필요가 없으며 클린 설치 시도할 때 HFS로 포맷해도 APFS로 변경됩니다
+클린 설치를 진행할 경우 마우스 좌표가 디스플레이 되는 영역이 다를 수 있지만 익숙해지면 생각보다 쉽게 사용 가능합니다
 ```
 <br/>
 ___
@@ -64,4 +78,5 @@ ___
 * TianoCore 설정의 OVMF 해상도를 2560x1440으로 표시하려면 HDMI 포트로 연결해야 합니다
 ___
 <br/>
+
 
