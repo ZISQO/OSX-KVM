@@ -71,7 +71,7 @@ $ sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinsta
 * 앱스토어에서 다운로드 받은 파일을 USB에 복원해야 합니다
 * 명령어 마지막 문자 xxx는 USB 드라이브 이름을 지정 해주면 됩니다
 * 클린 디스크 복원 과정엔 어떠한 패치도 들어가지 않습니다
-
+<br/>
 
 ```
 $ qemu-img create -f qcow2 mac_hdd_ng.img 128G
