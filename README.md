@@ -85,6 +85,27 @@ $ qemu-img create -f qcow2 mac_hdd_ng.img 128G
 ```
 $ virsh define macOS.xml
 ```
+* 가상 머신 관리자(Virt-Manager)에 macOS.xml을 등록한 다음
+* 가상 머신 관리자의 가상 머신 속성에서 하드웨어 추가를 선택한 다음
+* USB 디스크를 연결할 PCI 호스트 장치에서 검색해 등록해 주세요
+* **USB 장치를 직접 선택하는 방법은 패스스루가 아님을 유의합니다**
+
+
+기타 GPU 패스스루및 PCI 장치 패스스루는 식스플로우의 팁게시판을 이용해 주세요
+
+
+### 참고 사이트
+* https://sixflow.kr
+
+* https://github.com/kholia/OSX-KVM
+
+* https://github.com/foxlet/macOS-Simple-KVM
+
+* http://www.contrib.andrew.cmu.edu/~somlo/OSXKVM/
+
+* https://www.kraxel.org/blog/2017/09/running-macos-as-guest-in-kvm/
+
+
 
 
 
