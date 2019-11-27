@@ -52,6 +52,7 @@ $ virsh define macOS.xml
 
 <blockquote>
 > 식스플로우에서 다운로드 받은 사전 설치 디스크(24GB)는 home/사용자계정/OSX-KVM 폴더에 배치해 주세요
+
 BREAK!
 
 ```
