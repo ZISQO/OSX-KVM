@@ -41,7 +41,7 @@
   </qemu:commandline>
 
 
-<!--	오픈코어 부트로더용 스카이레이크 -->
+<!--	오픈코어 부트로더용 스카이레이크 설정 -->
   <qemu:commandline>
     <qemu:arg value='-device'/>
     <qemu:arg value='isa-applesmc,osk=ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc'/>
