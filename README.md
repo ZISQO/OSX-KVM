@@ -24,7 +24,7 @@ GPU 패스스루를 이용해 외장 그래픽을 가상 머신에 직접 연결
 <br/>
 
 ___
-### 기능 작동 
+### 기능 작동 (World first i stabled a hackintosh system)
 
 * AMD RX 5700XT H264, H265 가속 활성화 (다빈치 리졸브, 파컷 사용 가능)
 * 넷플릭스 1080P - 파이어폭스 넷플릭스 애드온
